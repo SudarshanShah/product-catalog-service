@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://sudarshan-db.ckl2ey202gfr.us-east-1.rds.amazonaws.com:5432/
+    username: postgres
+    password: Rdsdb#1243
+  jpa:
+    hibernate:
+      ddl-auto: update
+  
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+app:
+  s3:
+    bucket: ann-trader-sudarshan-bucket
+    region: us-east-1
+
+presign:
+  upload-expiry-minutes: 15
+  download-expiry-minutes: 15
